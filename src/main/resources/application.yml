@@ -1,0 +1,42 @@
+server:
+    port: 8090
+
+spring:
+  application:
+    name: evaluate-server
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/file
+      username: root
+      password: 123456
+  jpa:
+      database: MYSQL
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+  freemarker:
+      allow-request-override: false
+      cache: false
+      check-template-location: true
+      charset: UTF-8
+      content-type: text/html
+      expose-request-attributes: false
+      expose-session-attributes: false
+      expose-spring-macro-helpers: false
+      template-loader-path: classpath:/templates
+
+  thymeleaf:
+      cache: false
+  mvc:
+    view:
+      prefix: /static/
+      suffix: .html
+
+
+logging:
+  file: D:/u disk/logFile.log
+  level:
+    org:
+      springframework:
+        web: DEBUG
+      security: INFO
